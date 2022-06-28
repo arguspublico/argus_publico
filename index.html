@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc API teste</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+
+  <body>
+    <header class="headerContainer">
+        <div class="logo">
+            <img src="https://www.argusolutions.com.br/wp-content/uploads/2021/06/Argus-Logotipo-1.png">
+        </div>
+        
+    </header>
+
+    <div class="navbar">
+        <h2>API ABINBEV - ZEMOG</h2>
+        <ul class="nav">
+            <li>
+                <a href="#Documentação">
+                    <span>Introdução</span>
+                </a>
+            <li>
+                <a href="#Documentação">
+                    <span>Argus API</span>
+                </a>
+            </li>
+            <li>
+                <a href="#Contents">
+                    <span>Contents</span>
+                </a>
+            </li>
+            <li>
+                <a href="#Next Features">
+                    <span>API Next Features</span>
+                </a>
+            </li>
+            <li>
+                <a href="#Post Authentication">
+                    <span>API Documentation</span>
+                </a>
+            </li>
+            <li>
+                <a href="#Post Authentication">
+                    <span>POST Authentication</span>
+                </a>
+            </li>
+            <li>
+                <a href="#GET Select_event_by_date">
+                    <span>GET Select_events_by_date</span>
+                </a>
+            </li>
+            <li>
+                <a href="#GET Select_event_by_date_and_plate">
+                    <span>GET Select_events_by_date_and_plate</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <main class="mainContainer">
+        <div class="argusContainer">
+            <h1><a name="Documentação">Documentação Argus API</a></h1>
+            <p>ver. <b>1.3.4</b></p>
+            <p>URI details:  <a href="url">https://api.arguss.ai/</a></p>
+        </div>
+
+        <div class="contentsContainer">
+            <h1><a name="Contents"></a>Contents</h1>
+            <p><b>i -</b> authentication (method - POST)</p>
+            <p><b>ii -</b>  select event by date (method - GET)</p>
+            <p><b>iii -</b>  select event by plate given a date (method - GET)</p>
+            <p><b>iv -</b>  select reprocessed events given a date (method - GET)</p>
+        </div>
+
+        <div class="ApiNextContainer">
+            <h1><a name="Next Features"> Next Features</a></h1>
+            <p>• Filter by operation</p>
+            <p>• Filter by timespan in the same date</p>
+            <p>• Processed alarm stream - real time data service</p>
+        </div>
+
+        <div class="documentationContainer">
+            <h1><a name="Post Authentication">Post Authentication</a></h1>
+            <div class="codeMenorContainer">
+                <div class="bolinhas">
+                    <div class="bolinha" style="background: #FF6054;"></div>
+                    <div class="bolinha" style="background: #FEBF30;"></div>
+                    <div class="bolinha" style="background: #2BC942;"></div>
+                </div>
+                <p>https://api.arguss.ai/login</p>
+            </div>
+                <p><b>1-</b> URI: <a href="url">https://api.arguss.ai/login</a></p>
+                <p><b>2-</b> Request method - POST</p>
+                <p><b>Input parameter specification - payload:</b></p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+               <pre>
+                   <code>
+    {
+        username: { string }
+        password: { string }
+    }
+                   </code>
+               </pre>
+            </div>
+            <p><b>Return value example:</b></p>
+        <div class="codeContainer">
+            <div class="bolinhas">
+                <div class="bolinha" style="background: #FF6054;"></div>
+                <div class="bolinha" style="background: #FEBF30;"></div>
+                <div class="bolinha" style="background: #2BC942;"></div>
+            </div>
+            <pre>
+                <code>
+    {
+        "access_token": 
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzAzMjg4NzQsImlhdCI6MTYzMD
+        MyODU3NCwibmJmIjoxNjMwMzI4NTc0LCJpZGVudGl0eSI6Mn0.Ld9ASkP5MShvm-
+        2IoTRdEL2f8QleChVcYDS9So4Vymc"
+    }
+                </code>
+            </pre>
+        </div>
+        </div>
+
+        <div class="headersContainer">
+            <h1>Headers</h1>
+            <p><b>Content-Type</b></p>
+            <p>application/json</p>
+            <p><b>Authorization</b></p>
+            <p>Bearer</p>
+            <p>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzM2MTk3MzUsImlhdCI6MTYzMzY
+            xOTQzNSwibmJmIjoxNjMzNjE5NDM1LCJpZGVudGl0eSI6Mn0.x06ubWh5CotdmD8n04O5rSv1di0owJV-zxwFeBg4xAk</p>
+        </div>
+        
+        <div class="bodyContainer">
+            <h1>Body</h1>
+            <p><b>raw</b></p>
+            <div class="codeContainer">
+                <div class="bolinhas">
+                    <div class="bolinha" style="background: #FF6054;"></div>
+                    <div class="bolinha" style="background: #FEBF30;"></div>
+                    <div class="bolinha" style="background: #2BC942;"></div>
+                </div>
+                <pre>
+                    <code>
+    {
+        "username": " { user } ",
+        "password": " { password } "
+    }  
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+            <div class="exampleContainer">
+                <p><b>Example Request</b></p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+import requests
+import json
+                            
+url = "https://api.arguss.ai/login"
+                            
+payload = json.dumps({
+"username": " user ",
+"password": " password "
+})
+headers = {
+'Content-Type': 'application/json',
+'Authorization': 'Bearer 
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzM2MTk3MzUsImlhdCI6MTYzMzYxOTQzN
+SwibmJmIjoxNjMzNjE5NDM1LCJpZGVudGl0eSI6Mn0.x06ubWh5CotdmD8n04O5rSv1di0owJV-zxwFeBg4xAk'
+}
+                            
+response = requests.request("POST", url, headers=headers, data=payload)
+                            
+print(response.text)   
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="Select_event_by_dateContainer">
+                <h1><a name="GET Select_event_by_date">GET Select_event_by_date</a></h1>
+                <div class="codeMenorContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+
+                    <pre>
+                        <code>
+    https://api.arguss.ai/eventos/2021-09-02
+                        </code>
+                    </pre>
+                </div>
+
+                <p><b>1-</b> URI: <a>https://api.arguss.ai/eventos/</a></p>
+                <p>Date format - <b>aaaa-mm-dd</b></p>
+                <p><b>2-</b> Request method - GET</p>
+                <p><b>Input parameter specification - header:</b></p>
+
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+    {
+        Content/Type: application/json
+        Authorization: Bearer { token }
+    }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="OutputContainer">
+                <p><b>Type- JSON</b></p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+    {
+
+    "Operacion": "ABI MEXICO_CMM_ZEMOG",
+    "Flota": "TZ454_43AN7T",
+    "Evento": "Bostezo",
+    "Hora_alarma": "2021-08-28 00:00:15",
+    "Velocidad": 25,
+    "Lat": 19.470199584960938,
+    "Long": -99.17579650878906,
+    "Photo_url": "https://xxxxxx/",
+    "Video_url": "https://xxxxxx/"
+    "Id": XYX
+
+    },
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="specificationContainer">
+                <h1>Data Specification</h1>
+                <p><b>Operation: </b>name of the underlying cliente operation;</p>
+                <p><b>Flota: </b>plate number of the vehicle;</p>
+                <p><b>Hora_alarma: </b>date and time of the occurrence of the alarm;</p>
+                <p><b>Velocidad: </b>speed of the vehicle at the alarm moment;</p>
+                <p><b>Lat: </b>latitude of the vehicle at the alarm moment;</p>
+                <p><b>Long: </b>longitude of the vehicle at the alarm moment;</p>
+                <p><b>photo_url: </b>lurl of the photo media;</p>
+                <p><b>Video_url: </b>url of the video media;</p>
+                <p><b>id: </b>id of the event;</p>
+            </div>
+
+            <div class="headersContainer">
+                <h1>Headers</h1>
+                <p><b>Content-Type</b></p>
+                <p>application/json</p>
+                <p><b>Authorization</b></p>
+                <p>Bearer</p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzA2NzY5MjksImlhdCI6MTYzMDY3NjYyOSwibmJmIjoxNjMwNjc2NjI5LCJpZGVudGl0eSI6Mn0.v25ZbaDJ9C1ET4QZP52KZLt3FxwZ7Mex4H-7JRhE77s
+                        </code>
+                    </pre>
+                </div>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+import requests
+import json
+
+url = "https://api.arguss.ai/eventos/2021-09-02"
+
+payload={}
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer 
+  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzA2NzY5MjksImlhdCI6MTYzMDY3NjYyOSwibmJm
+  IjoxNjMwNjc2NjI5LCJpZGVudGl0eSI6Mn0.v25ZbaDJ9C1ET4QZP52KZLt3FxwZ7Mex4H-7JRhE77s'
+}
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="Select_event_by_date_and_plateContainer">
+                <h1><a name="GET Select_event_by_date_and_plate">GET Select_event_by_date_and_plate</a></h1>
+                <div class="codeMenorContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+https://api.arguss.ai/eventos_plate/2021-08-28/TZ454_43AN7T 
+                        </code>
+                    </pre>
+                </div>
+                <p><b>1-</b> URI: <a href="url">https://api.arguss.ai/eventos_plate/</a> date / plate</p>
+                <p>Date format - string -  <b>aaaa-mm-dd</b> > Plate format - string</p>
+                <p><b>2-</b>Request method - GET</p>
+                <p>Input parameter specification - header:</p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+    {
+        Content/Type: application/json
+        Authorization: Bearer token
+    
+    } 
+                        </code>
+                    </pre>
+                </div>
+
+                <p><b>Header example:</b></p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+    headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer  token '
+            
+            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="outputContainer">
+                <h1>Output example</h1>
+                <p>Type - JSON</p>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+    {
+
+        "Operacion": "ABI MEXICO_CMM_ZEMOG",
+        "Flota": "TZ454_43AN7T",
+        "Evento": "Bostezo",
+        "Hora_alarma": "2021-08-28 00:00:15",
+        "Velocidad": 25,
+        "Lat": 19.470199584960938,
+        "Long": -99.17579650878906,
+        "Photo_url": "https://xxxxxx/",
+        "Video_url": "https://xxxxxx/"
+        "Id": XYX
+
+    },  
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="dataspecificationContainer">
+                <h1>Data Specification</h1>
+                <p><b>Operacion:</b> name of the underlying client operation;</p>
+                <p><b>Flota:</b> plate number of the vehicle;</p>
+                <p><b>Evento:</b> alarm after analysis;</p>
+                <p><b>Hora_Alarma:</b> date and time of the occurrence of the alarm;</p>
+                <p><b>Velocidad:</b> speed of the vehicle at the alarm moment;</p>
+                <p><b>Lat:</b> latitude of the vehicle at the alarm moment;</p>
+                <p><b>Long:</b> longitude of the vehicle at the alarm moment;</p>
+                <p><b>Photo_url:</b> url of the photo media;</p>
+                <p><b>Video_utl:</b> url of the video media;</p>
+                <p><b>Id:</b> id of the event;</p>
+            </div>
+
+            <div class="headersContainer">
+                <h1>Headers</h1>
+                <p><b>Content-Type</b></p>
+                <p>application/json</p>
+                <p><b>Authotization</b></p>
+                <p>Bearer</p>
+                <p>
+                eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzA2NzY5MjksImlhdCI6MTYzMDY3NjYyOSwibmJmIjoxNjMwNjc2NjI5
+                LCJpZGVudGl0eSI6Mn0.v25ZbaDJ9C1ET4QZP52KZLt3FxwZ7Mex4H-7JRhE77s
+                </p>
+            </div>
+
+            <div class="paramsContainer">
+                <h1>Params</h1>
+                <div class="codeContainer">
+                    <div class="bolinhas">
+                        <div class="bolinha" style="background: #FF6054;"></div>
+                        <div class="bolinha" style="background: #FEBF30;"></div>
+                        <div class="bolinha" style="background: #2BC942;"></div>
+                    </div>
+                    <pre>
+                        <code>
+import requests
+import json
+
+url = "https://api.arguss.ai/eventos_plate/2021-08-28/TZ454_43AN7T"
+
+payload={}
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MzA2NzY5MjksImlhdCI6MTYzMDY3NjYyOSwibmJmIjoxNjMwNjc2NjI5LCJpZGVudGl0eSI6Mn0.v25ZbaDJ9C1ET4QZP52KZLt3FxwZ7Mex4H-7JRhE77s'
+}
+
+response = requests.request("GET", url, headers=headers, data=payload)
+
+print(response.text)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+           
+        <footer>
+            <div class="footer">
+                <p>&copy; 2022 • Developed by <b>ARGUS Solutions.</b></p>
+            </div>
+        </footer>
+    </main>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
+</html>
